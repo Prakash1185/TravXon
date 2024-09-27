@@ -1,12 +1,12 @@
 import React from 'react'
 
-const HotelDetailsPage = () => {
+const TermsAndConditonsPage = () => {
   return (
     <div className='text-3xl text-center py-10'>
-      <div>THIS IS HOTELS PAGE </div>
+      <div>THIS IS TERMS AND CONDITIONS PAGE </div>
       <p className='py-5'>🚧 UNDER CONSTRUCTION 🚧</p>
     </div>
   )
 }
 
-export default HotelDetailsPage
+export default TermsAndConditonsPage

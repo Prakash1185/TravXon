@@ -1,8 +1,63 @@
-import React from 'react'
+import React, { useState } from 'react'
 import { SubmitButton } from '../Components/Buttons'
-import { Link } from 'react-router-dom'
+import { Link, useNavigate } from 'react-router-dom'
+import { handleError, handleSuccess } from './../Components/ToastMessage';
+
+const BACKEND_URL = import.meta.env.VITE_BACKEND_URL
 
 const RegisterPage = () => {
+
+  const [userInfo, setUserInfo] = useState({
+    name: "",
+    email: "",
+    password: ""
+  })
+
+  const navigate = useNavigate()
+
+  const handleChange = (e) => {
+    const { name, value } = e.target;
+    const copyUserInfo = { ...userInfo }
+    copyUserInfo[name] = value
+    setUserInfo(copyUserInfo)
+  };
+
+  const handleRegisterSubmit = async (e) => {
+    e.preventDefault()
+    const { name, email, password } = userInfo
+    if (!name || !email || !password) {
+      return handleError("Please fill all the details")
+    }
+
+    try {
+      const response = await fetch(`${BACKEND_URL}/auth/register`, {
+        method: "POST",
+        headers: {
+          "Content-Type": "application/json",
+        },
+        body: JSON.stringify(userInfo)
+      })
+      const result = await response.json()
+      const { success, message, error } = result
+      if (success) {
+        handleSuccess(message)
+        navigate("/login")
+        setUserInfo({
+          name: "",
+          email: "",
+          password: ""
+        })
+      } else if (error) {
+        const details = error?.details[0].message
+        handleError(details)
+      } else if (!success) {
+        handleError(message)
+      }
+    } catch (error) {
+      handleError(error)
+    }
+  }
+
   return (
     <div className="flex  h-[85vh] items-center">
       <div className="bg-bgColor border border-yColor  py-8 px-8  w-[22rem] md:w[24rem]  mx-auto  rounded-xl h-[70vh] flex flex-col items-center ">
@@ -11,6 +66,7 @@ const RegisterPage = () => {
         </h1>
         <form
           className="flex flex-col items-center text-black gap-1"
+          onSubmit={handleRegisterSubmit}
         >
           <input
             type="text"
@@ -18,7 +74,10 @@ const RegisterPage = () => {
             autoComplete="off"
             placeholder="Name"
             className="my-1 outline-none  py-2 px-3 rounded-md w-72"
-            name="email"
+            name="name"
+            onChange={handleChange}
+            value={userInfo.name}
+
           />
           <input
             type="email"
@@ -27,6 +86,8 @@ const RegisterPage = () => {
             placeholder="Email"
             className="my-1 outline-none  py-2 px-3 rounded-md w-72"
             name="email"
+            onChange={handleChange}
+            value={userInfo.email}
           />
           <input
             type="password"
@@ -35,6 +96,8 @@ const RegisterPage = () => {
             placeholder="Password"
             className="my-1 outline-none  py-2 px-3 rounded-md w-72"
             name="password"
+            onChange={handleChange}
+            value={userInfo.password}
           />
           <button type="submit" className="mt-2">
             <SubmitButton text={"Register"} />

@@ -8,12 +8,12 @@ const UserSideBar = () => {
       link: "/user/account",
     },
     {
-      title: "Ongoing Trips",
-      link: "/user/ongoing",
+      title: "Trips",
+      link: "/user/trips",
     },
     {
-      title: "Upcoming Trips",
-      link: "/user/upcoming",
+      title: "Hotels",
+      link: "/user/hotels",
     },
     {
       title: "History",

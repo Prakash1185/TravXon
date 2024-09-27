@@ -10,6 +10,10 @@ const AdminSidebar = () => {
     {
       title: "Users",
       link: "/admin/users",
+    },
+    {
+      title: "Trips",
+      link: "/admin/trips",
     }
   ];
   return (
