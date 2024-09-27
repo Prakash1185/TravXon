@@ -1,0 +1,51 @@
+# Environment variables
+.env
+.env.*        # Ignore all environment files, e.g., .env.local, .env.production
+
+# Log files
+*.log
+npm-debug.log*
+yarn-debug.log*
+yarn-error.log*
+
+# Build output
+dist/
+build/
+
+# Node modules (for Node.js projects)
+node_modules/
+
+# Coverage reports
+coverage/
+*.lcov
+
+# IDE and editor-specific settings
+.vscode/
+.idea/
+*.swp
+*.swo
+
+# OS-generated files
+.DS_Store     # macOS
+Thumbs.db     # Windows
+
+# Private key files (should never be committed)
+*.pem
+*.key
+*.crt
+
+# Sensitive credentials or API keys
+secrets.json
+config.json
+
+# Lock files (if you're not using them)
+package-lock.json
+yarn.lock
+
+# GitHub or GitLab tokens (if applicable)
+.github_token
+.gitlab_token
+
+# Temporary or cache files
+*.tmp
+*.cache
