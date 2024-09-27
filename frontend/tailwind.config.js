@@ -8,7 +8,7 @@ export default {
     extend: {
       colors:{
         "bgColor":"#090910",
-        "yellowColor":"#FFC600"
+        "yColor":"#FFC600"
       }
     },
   },

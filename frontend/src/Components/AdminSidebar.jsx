@@ -1,30 +1,21 @@
 import React from 'react'
 import { NavLink } from 'react-router-dom';
 
-const UserSideBar = () => {
+const AdminSidebar = () => {
   const links = [
     {
-      title: "Account",
-      link: "/user/account",
+      title: "Add Event",
+      link: "/add/event",
     },
     {
-      title: "Ongoing Trips",
-      link: "/user/ongoing",
-    },
-    {
-      title: "Upcoming Trips",
-      link: "/user/upcoming",
-    },
-    {
-      title: "History",
-      link: "/user/history",
-    },
-
+      title: "Users",
+      link: "/admin/users",
+    }
   ];
   return (
     <>
-      <div className="border-r  bg-bgColor w-[30%] lg:w-[20%] h-[89vh] fixed border-yColor hidden md:block">
-        <ul className="flex  flex-col items-center justify-center mx-auto space-y-4 pt-7">
+      <div className="border-r bg-bgColor w-[30%] lg:w-[20%] h-[89vh] fixed border-yColor hidden md:block">
+        <ul className="flex flex-col items-center justify-center mx-auto space-y-4 pt-7">
           {links.map((item, index) => (
             <NavLink
               key={index}
@@ -45,4 +36,4 @@ const UserSideBar = () => {
   )
 }
 
-export default UserSideBar
+export default AdminSidebar
