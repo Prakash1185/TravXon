@@ -20,7 +20,7 @@ Follow these steps to get the project up and running on your local machine.
 - MongoDB (make sure you have it installed or use a cloud service)
 
 ### Installation
-1. Clone the repository:
+1.Clone the repository:
    https://github.com/Prakash1185/TravXon.git  
    cd Travxon
 
