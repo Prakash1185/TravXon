@@ -21,29 +21,29 @@ Follow these steps to get the project up and running on your local machine.
 
 ### Installation
 1. Clone the repository:
-   https://github.com/Prakash1185/TravXon.git
+   https://github.com/Prakash1185/TravXon.git  
    cd Travxon
 
-2.Install backend dependencies:
-   cd backend
-   npm install
+2.Install backend dependencies:  
+   cd backend  
+   npm install  
 
-3.Install frontend dependencies:
-   cd ../frontend
-   npm install
+3.Install frontend dependencies:  
+   cd ../frontend  
+   npm install  
 
 ### Configuration
-1.Create a .env file in the backend directory and add your MongoDB URI and other neccessary variables:
+1.Create a .env file in the backend directory and add your MongoDB URI and other neccessary variables:  
   MONGO_URI=your_mongodb_uri 
 
 ### Running the Application
-1.Start the backend server:
-  cd backend
-  npm start
+1.Start the backend server:  
+  cd backend  
+  npm start  
 
-2.In a new terminal, start the frontend:
-   cd frontend
-   npm start
+2.In a new terminal, start the frontend:  
+   cd frontend  
+   npm start  
 
 3.Open your browser and navigate to http://localhost:PORT to view the app.
 
