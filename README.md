@@ -45,7 +45,7 @@ Follow these steps to get the project up and running on your local machine.
    cd frontend
    npm start
 
-3.Open your browser and navigate to http://localhost:3000 to view the app.
+3.Open your browser and navigate to http://localhost:PORT to view the app.
 
 
   
