@@ -32,11 +32,11 @@ Follow these steps to get the project up and running on your local machine.
    cd ../frontend
    npm install
 
-Configuration
+### Configuration
 1.Create a .env file in the backend directory and add your MongoDB URI and other neccessary variables:
   MONGO_URI=your_mongodb_uri 
 
-Running the Application
+### Running the Application
 1.Start the backend server:
   cd backend
   npm start
