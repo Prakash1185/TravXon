@@ -6,7 +6,7 @@ import { handleError, handleSuccess } from './../Components/ToastMessage';
 
 const BACKEND_URL = import.meta.env.VITE_BACKEND_URL
 
-const UserProfilePage = () => {
+const UserProfilePage = ({setIsLoggedIn}) => {
 
   const [userInfo, setUserInfo] = useState({}); 
   const navigate = useNavigate()
@@ -44,6 +44,7 @@ const UserProfilePage = () => {
     localStorage.removeItem("userid")
     handleSuccess("Logged out successfully")
     navigate("/login")
+    setIsLoggedIn(false)
   }
 
   return (
