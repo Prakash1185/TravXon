@@ -25,12 +25,12 @@ Follow these steps to get the project up and running on your local machine.
    cd Travxon
 
 2.Install backend dependencies:
-cd backend
-npm install
+   cd backend
+   npm install
 
 3.Install frontend dependencies:
-cd ../frontend
-npm install
+   cd ../frontend
+   npm install
 
 Configuration
 1.Create a .env file in the backend directory and add your MongoDB URI and other neccessary variables:
@@ -42,8 +42,8 @@ Running the Application
   npm start
 
 2.In a new terminal, start the frontend:
-cd frontend
-npm start
+   cd frontend
+   npm start
 
 3.Open your browser and navigate to http://localhost:3000 to view the app.
 
